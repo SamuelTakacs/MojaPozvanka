@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potvrdenie účasti</title>
+    <link rel="stylesheet" href="styles_form.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "_dtFlnqczx-gN6g8l",
+        });
+    })();
+    </script>
+</head>
+<body>
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+    <h1>Potvrdenie účasti</h1>
+    
+    <form id="rsvp-form">
+        <div id="family-members">
+            <div class="member-row">
+                <label for="name">Meno:</label>
+                <input type="text" class="name" name="name" required>
+                
+                <label for="meal">Strava:</label>
+                <select class="meal" name="meal" required>
+                    <option value="normal">Bez obmedzení</option>
+                    <option value="bezlepkove">Bezlepkové</option>
+                    <option value="bezlaktozove">Bezlaktózové</option>
+                    <option value="vegetarian">Vegetariánske</option>
+                    <option value="vegan">Vegánske</option>
+                    <option value="special">Špeciálne</option>
+                </select>
+            </div>
+        </div>
+        <button type="button" id="add-member">+ Pridať ďalšie meno a stravu</button>
+        
+        <label for="present" class="present-declaration">
+            <input type="checkbox" id="present" name="present" required>
+            Čestne prehlasujem že žiaden dar okrem svojej prítomnosti neprinesiem.
+        </label>
+
+        <button type="submit">Potvrdiť účasť</button>
+    </form>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script_visual.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
