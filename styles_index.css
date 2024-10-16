@@ -9,11 +9,12 @@
 
 /* Body styling */
 body {
+    margin-top: 50px;
+    margin-bottom: 50px;
     font-family: 'Lora', serif;
     background-color: #ffffff;
     color: #333333;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     min-height: 100vh;  /* Ensure body is at least the height of the viewport */

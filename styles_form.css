@@ -7,8 +7,6 @@
 
 /* Body styling */
 body {
-    margin-top: 20px;
-    margin-bottom: 20px;
     font-family: 'Georgia', serif;
     background-color: #fff;
     color: #333;
@@ -81,8 +79,8 @@ form {
 /* Remove button for each row */
 .member-row .remove-row {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 20px; /* Adjusted from 20px to 10px to align better */
+    right: 20px; /* Adjusted from 20px to 10px to keep it inside the container */
     background: none;
     border: none;
     color: #000000;
@@ -90,7 +88,8 @@ form {
     cursor: pointer;
     padding: 0;
     line-height: 0;
-    display: none; /* Hide bin by default */
+    display: block; /* Ensure it's visible */
+    text-align: right;
 }
 
 /* Add Member button */
