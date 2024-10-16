@@ -36,6 +36,59 @@ function addMemberRow() {
     });
 }
 
+// Button to go back to the invite page from the popup
+document.getElementById('back-to-invite').addEventListener('click', function() {
+    window.location.href = 'invite.html';  // Redirect to the invite page
+});
+
+// Button inside form to go back to the invite page
+document.getElementById('go-back-to-invite').addEventListener('click', function() {
+    window.location.href = 'invite.html';
+});
+
+// Handle form submission and show the custom popup with confetti
+document.getElementById('rsvp-form').addEventListener('submit', function(event) {
+    event.preventDefault();  // Prevent default form submission
+
+    // Simulate form processing (replace with actual form logic)
+    setTimeout(function() {
+        showSuccessPopup();  // Show popup on successful form submission
+        triggerConfetti();   // Trigger confetti effect
+    }, 1000);
+});
+
+// Function to show success popup and trigger confetti
+function showSuccessPopup() {
+    // Show the popup
+    document.getElementById('popup').classList.remove('hidden');
+}
+
+// Function to trigger confetti using Confetti.js
+function triggerConfetti() {
+    var duration = 5 * 1000;  // 5 seconds
+    var end = Date.now() + duration;
+
+    (function frame() {
+        // Fire random bursts of confetti
+        confetti({
+            particleCount: 5,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0 }
+        });
+        confetti({
+            particleCount: 5,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1 }
+        });
+
+        if (Date.now() < end) {
+            requestAnimationFrame(frame);
+        }
+    }());
+}
+
 
 document.getElementById('rsvp-form').addEventListener('submit', function(event) {
     event.preventDefault();  // Prevent form submission from refreshing the page
