@@ -16,22 +16,30 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    min-height: 100vh;  /* Ensures content takes at least the full height of the screen */
+    min-height: 100vh;  /* Ensure body is at least the height of the viewport */
     padding: 20px;
     position: relative;
     overflow-x: hidden;
+    overflow-y: auto;  /* Explicitly enable vertical scrolling */
 }
 
-/* Make content scrollable while keeping it centered */
+/* Fix for content container */
 .content-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-grow: 1;  /* Allows the container to grow and take available space */
     width: 100%;
-    max-width: 1200px; /* Limits the maximum width */
+    max-width: 1200px; /* Ensures the content doesn't overflow horizontally */
     text-align: center;
+}
+
+/* Add this to help mobile browsers handle height correctly */
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto; /* Make sure the body is scrollable on mobile */
+    -webkit-overflow-scrolling: touch; /* Enables smooth scrolling on iOS */
 }
 
 /* Particle Background Styling */
