@@ -38,12 +38,12 @@ function addMemberRow() {
 
 // Button to go back to the invite page from the popup
 document.getElementById('back-to-invite').addEventListener('click', function() {
-    window.location.href = 'invite.html';  // Redirect to the invite page
+    window.location.href = 'index.html';  // Redirect to the invite page
 });
 
 // Button inside form to go back to the invite page
 document.getElementById('go-back-to-invite').addEventListener('click', function() {
-    window.location.href = 'invite.html';
+    window.location.href = 'index.html';
 });
 
 // Handle form submission and show the custom popup with confetti

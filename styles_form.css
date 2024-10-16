@@ -213,7 +213,9 @@ form button[type="button"]:hover {
 }
 
 .hidden {
-    display: none;
+    display: none !important; /* Make sure it is completely hidden */
+    opacity: 0;
+    visibility: hidden;
 }
 
 /* Confetti Container Styling */
