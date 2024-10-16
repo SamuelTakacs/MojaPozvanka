@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+
 /* Reset default browser styles */
 * {
     margin: 0;
@@ -7,100 +9,141 @@
 
 /* Body styling */
 body {
-    font-family: 'Georgia', serif;
-    background-color: #fff;
-    color: #333;
+    font-family: 'Lora', serif; /* Elegant serif font for a professional look */
+    background-color: #ffffff;
+    color: #333333;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     min-height: 100vh;
     padding: 20px;
     position: relative;
     overflow: hidden;
-}
-
-/* Heading styling */
-h1 {
-    font-size: 3rem;
-    color: #DAA520; /* Gold */
     text-align: center;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* 80 number styling */
-.big-80 {
-    font-size: 8rem;
-    font-weight: bold;
-    color: #DAA520; /* Gold */
-    margin-bottom: 20px;
-    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-/* List styling */
-ul {
-    list-style-type: none;
-    font-size: 1.2rem;
-    color: #333;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-ul li {
-    margin-bottom: 10px;
-    background: rgba(218, 165, 32, 0.1);
-    padding: 10px;
-    border-radius: 8px;
-}
-
-/* Paragraph for instructions */
-p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 20px;
-    text-align: center;
-    padding: 10px 20px;
-    background-color: #f8f8f8;
-    border-radius: 10px;
-}
-
-/* Button styling */
-#confirm-button {
-    font-size: 1.2rem;
-    background-color: #DAA520; /* Gold */
-    color: #fff;
-    border: none;
-    padding: 15px 30px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-#confirm-button:hover {
-    background-color: #B8860B; /* Darker gold */
-    transform: translateY(-3px);
-}
-
-/* Style for the particles container */
+/* Particle Background Styling */
 #particles-js {
     position: fixed;
     width: 100%;
     height: 100%;
-    background-color: #fff; /* White background */
+    background-color: #ffffff; /* White background */
     z-index: -1; /* Behind content */
     top: 0;
     left: 0;
 }
 
+/* Typography for headings */
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #B8860B; /* Gold */
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    transition: color 0.3s ease;
+    background: none; /* Removed background */
+}
 
-/* Responsive styles */
-@media (max-width: 768px) {
+.heading {
+    font-family: "Parisienne", cursive;
+    font-size: 2rem;
+}
+
+.heading2 {
+    font-family: "Parisienne", cursive;
+    font-size: 3rem;
+    padding-bottom: 2rem;
+}
+
+/* Styling for the big 80 */
+.big-80 {
+    font-family: 'Playfair Display', serif;
+    font-size: 8rem;
+    font-weight: 700;
+    color: #DAA520; /* Gold */
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 8px rgba(218, 165, 32, 2); /* Subtle shadow */
+}
+
+/* List Styling */
+ul {
+    list-style-type: none;
+    font-size: 1.5rem;
+    color: #333333;
+    margin-bottom: 10px;
+    font-family: 'Open Sans', sans-serif;
+    padding: 10px;
+}
+
+li {
+    padding: 5px;
+}
+
+/* Final touch note in italic */
+.message {
+    font-size: 1.1rem;
+    color: #555555;
+    margin-bottom: 30px;
+    font-style: italic;
+    padding: 15px 25px;
+    font-family: 'Lora', serif;
+    line-height: 1.5;
+}
+
+/* Button styling */
+#confirm-button {
+    font-size: 1.4rem;
+    background-color: #DAA520; /* Gold */
+    color: #ffffff;
+    border: none;
+    padding: 15px 40px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    border-radius: 8px;
+    letter-spacing: 1px;
+    box-shadow: 1px 1px 8px rgba(218, 165, 32, 2); /* Subtle shadow */
+}
+
+/* Countdown styling */
+.countdown {
+    font-size: 1.1rem;
+    color: #DAA520; /* Gold */
+    margin-top: 15px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Responsive styles for medium screens */
+@media (max-width: 1024px) {
     h1 {
         font-size: 2.5rem;
+    }
+
+    .big-80 {
+        font-size: 7rem;
+    }
+
+    ul {
+        font-size: 1.4rem;
+        padding: 5px;
+    }
+
+    #confirm-button {
+        font-size: 1.2rem;
+        padding: 12px 30px;
+    }
+
+    .countdown {
+        font-size: 1rem;
+    }
+}
+
+/* Responsive styles for mobile screens */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 15px;
     }
 
     .big-80 {
@@ -108,30 +151,55 @@ p {
     }
 
     ul {
+        font-size: 1.2rem;
+        padding: 5px;
+    }
+
+    p {
         font-size: 1rem;
+        padding: 10px 20px;
+        margin-bottom: 20px;
     }
 
     #confirm-button {
         font-size: 1rem;
-        padding: 10px 20px;
+        padding: 10px 25px;
+    }
+
+    .countdown {
+        font-size: 1rem;
     }
 }
 
+/* Responsive styles for smaller mobile screens */
 @media (max-width: 480px) {
     h1 {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .big-80 {
-        font-size: 5rem;
+        font-size: 7rem;
     }
 
     ul {
+        font-size: 1.2rem;
+    }
+
+    ul li {
+        padding: 5px;
+    }
+
+    p {
         font-size: 0.9rem;
+        padding: 8px 15px;
     }
 
     #confirm-button {
         font-size: 0.9rem;
-        padding: 8px 16px;
+        padding: 8px 20px;
+    }
+
+    .countdown {
+        font-size: 0.9rem;
     }
 }
