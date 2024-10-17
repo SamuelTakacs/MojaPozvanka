@@ -22,25 +22,3 @@ var countdownFunction = setInterval(function() {
     document.getElementById("countdown-timer").innerHTML = "EXPIRED";
   }
 }, 1000);
-
-// Typing effect function
-function typeMessage(element, text, speed) {
-  let i = 0;
-  function typeWriter() {
-      if (i < text.length) {
-          element.innerHTML += text.charAt(i);
-          i++;
-          setTimeout(typeWriter, speed);
-      }
-  }
-  typeWriter();
-}
-
-// Wait for the DOM to load before running the typing effect
-document.addEventListener("DOMContentLoaded", function() {
-  const messageElement = document.querySelector('.message');
-  const messageText = "Najväčším darom pre mňa bude váš čas a prítomnosť. Ďalšie dary nie sú potrebné – váš čas je to najcennejšie, čo mi môžete venovať.";
-  const typingSpeed = 50; // Adjust typing speed (milliseconds per character)
-
-  typeMessage(messageElement, messageText, typingSpeed);
-});

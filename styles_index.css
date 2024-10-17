@@ -103,16 +103,6 @@ li {
     padding: 5px;
 }
 
-/* Final touch note in italic */
-.message {
-    font-size: 1.1rem;
-    color: #555555;
-    margin-bottom: 30px;
-    font-style: italic;
-    padding: 15px 25px;
-    font-family: 'Lora', serif;
-    line-height: 1.5;
-}
 
 /* Button styling */
 #confirm-button {

@@ -18,6 +18,12 @@ function addMemberRow() {
             <option value="vegan">Vegánske</option>
             <option value="special">Špeciálne</option>
         </select>
+        <label for="drink">Pitie:</label>
+        <select class="drink" name="drink" required>
+            <option value="Vino-biele">Víno biele</option>
+            <option value="Vino-cervene">Víno červené</option>
+            <option value="ine">Iné</option>
+        </select>
 
         <button type="button" class="remove-row">X</button>
     `;
