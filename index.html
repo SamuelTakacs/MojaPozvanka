@@ -21,19 +21,25 @@
             <li><b>Čas:</b> 12:30</li>
             <li><b>Miesto:</b> Hotel Ambasador</li>
         </ul>
-        <a href="formular.html">
-            <button id="confirm-button">Potvrdiť účasť</button>
-        </a>
+        <button id="confirm-button">Odpovedať</button>
 
         <!-- Countdown Timer -->
         <p class="countdown">Do udalosti ostáva: <span id="countdown-timer"></span></p>
     </div>
 
+    <!-- Modal Popup -->
+    <div id="rsvp-modal" class="modal">
+        <div class="modal-content">
+            <p>Prosím, zvoľte možnosť pre pokračovanie</p>
+            <button id="attend-button">Prídem</button>
+            <button id="decline-button">Neprídem</button>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script_visual.js"></script>
-    <script src="countdown.js"></script> <!-- This will handle countdown logic -->
+    <script src="countdown.js"></script>
+    <script src="popup.js"></script> <!-- This will handle popup logic -->
 </body>
 </html>
-
-

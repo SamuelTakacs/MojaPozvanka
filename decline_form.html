@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potvrdenie účasti</title>
+    <link rel="stylesheet" href="styles_form.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "_dtFlnqczx-gN6g8l",
+        });
+    })();
+    </script>
+</head>
+<body>
+    <div id="popup" class="popup hidden">
+        <div class="popup-content">
+            <h2>Odpoveď odoslaná úspešne!</h2>
+            <button id="back-to-invite">Späť na pozvánku</button>
+        </div>
+    </div>
+    
+    <div id="particles-js"></div>
+    <h1>Odpoveď na pozvánku</h1>
+    <h2>Momentále odpovedáte že neprídete</h2>
+    
+    <form id="rsvp-form">
+        <div id="family-members">
+            <div class="member-row">
+                <label for="name">Meno:</label>
+                <input type="text" class="name" name="name" required>
+            </div>
+        </div>
+        <button type="button" id="add-member">+ Pridať ďalšie meno</button>
+
+        <button type="submit">Odoslať odpoveď</button>
+        <button type="button" id="go-back-to-invite">Späť na pozvánku</button>
+        <button type="button" id="accept">Zmeniť na prídem</button>
+    </form>
+    <div id="confetti-container" class="hidden"></div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="script_visual.js"></script>
+    <script src="decline_form.js"></script>
+</body>
+</html>

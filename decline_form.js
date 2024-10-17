@@ -8,23 +8,6 @@ function addMemberRow() {
     memberRow.innerHTML = `
         <label for="name">Meno:</label>
         <input type="text" class="name" name="name" required>
-
-        <label for="meal">Strava:</label>
-        <select class="meal" name="meal" required>
-            <option value="normal">Bez obmedzení</option>
-            <option value="bezlepkove">Bezlepkové</option>
-            <option value="bezlaktozove">Bezlaktózové</option>
-            <option value="vegetarian">Vegetariánske</option>
-            <option value="vegan">Vegánske</option>
-            <option value="special">Špeciálne</option>
-        </select>
-        <label for="drink">Pitie:</label>
-        <select class="drink" name="drink" required>
-            <option value="Vino-biele">Víno biele</option>
-            <option value="Vino-cervene">Víno červené</option>
-            <option value="ine">Iné</option>
-        </select>
-
         <button type="button" class="remove-row">X</button>
     `;
 
@@ -52,8 +35,8 @@ document.getElementById('go-back-to-invite').addEventListener('click', function(
     window.location.href = 'index.html';
 });
 
-document.getElementById('decline').addEventListener('click', function() {
-    window.location.href = 'decline_form.html';
+document.getElementById('accept').addEventListener('click', function() {
+    window.location.href = 'formular.html';
 });
 
 // Handle form submission and show the custom popup with confetti
@@ -109,37 +92,28 @@ document.getElementById('rsvp-form').addEventListener('submit', function(event) 
 
     // Debugging step: Check if dynamic elements are being selected properly
     console.log(document.querySelectorAll('.name').length, 'name fields found');
-    console.log(document.querySelectorAll('.meal').length, 'meal fields found');
 
     // Collect all names and meals
     document.querySelectorAll('.name').forEach(function(input) {
         names.push(input.value);
     });
 
-    document.querySelectorAll('.meal').forEach(function(select) {
-        meals.push(select.value);
-    });
-
     // Debugging step: Log the collected names and meals
     console.log('Names:', names);
-    console.log('Meals:', meals);
 
     // Prepare concatenated strings
     const namesString = names.join(', ');
-    const mealsString = meals.join(', ');
 
     // Debugging step: Check the concatenated strings
     console.log('Names String:', namesString);
-    console.log('Meals String:', mealsString);
 
     // Define the data to be sent
     const data = {
         service_id: 'service_8mkhomj',
-        template_id: 'template_le6cimw',
+        template_id: 'template_x0jty9u',
         user_id: '_dtFlnqczx-gN6g8l',  // This is your API key/public key from EmailJS
         template_params: {
             'names': namesString,
-            'meals': mealsString
         }
     };
 

@@ -23,7 +23,8 @@
     </div>
     
     <div id="particles-js"></div>
-    <h1>Potvrdenie účasti</h1>
+    <h1>Odpoveď na pozvánku</h1>
+    <h2>Momentále odpovedáte že prídete</h2>
     
     <form id="rsvp-form">
         <div id="family-members">
@@ -33,8 +34,8 @@
                 
                 <label for="meal">Strava:</label>
                 <select class="meal" name="meal" required>
-                    <option>Vyber z možností...</option>
-                    <option value="Normal">Bez obmedzení</option>
+                    <option value="" disabled selected>Vyber z možností...</option>
+                    <option value="Normal">Bez obmedzení (Normálne menu)</option>
                     <option value="Bezlepkove">Bezlepkové</option>
                     <option value="Bezlaktozove">Bezlaktózové</option>
                     <option value="Vegetarian">Vegetariánske</option>
@@ -43,7 +44,7 @@
                 </select>
                 <label for="drink">Pitie:</label>
                 <select class="drink" name="drink" required>
-                    <option>Vyber z možností...</option>
+                    <option value="" disabled selected>Vyber z možností...</option>
                     <option value="Vino-biele">Víno biele</option>
                     <option value="Vino-cervene">Víno červené</option>
                     <option value="ine">Iné</option>
@@ -57,8 +58,9 @@
             Čestne prehlasujem že žiaden dar okrem svojej prítomnosti neprinesiem.
         </label>
 
-        <button type="submit">Potvrdiť účasť</button>
+        <button type="submit">Odoslať odpoveď</button>
         <button type="button" id="go-back-to-invite">Späť na pozvánku</button>
+        <button type="button" id="decline">Zmeniť na neprídem</button>
     </form>
     <div id="confetti-container" class="hidden"></div>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
