@@ -106,10 +106,12 @@ document.getElementById('rsvp-form').addEventListener('submit', function(event) 
     // Get form data
     const names = [];
     const meals = [];
+    const drinks = [];
 
     // Debugging step: Check if dynamic elements are being selected properly
     console.log(document.querySelectorAll('.name').length, 'name fields found');
     console.log(document.querySelectorAll('.meal').length, 'meal fields found');
+    console.log(document.querySelectorAll('.drink').length, 'drinl fields found');
 
     // Collect all names and meals
     document.querySelectorAll('.name').forEach(function(input) {
@@ -120,17 +122,24 @@ document.getElementById('rsvp-form').addEventListener('submit', function(event) 
         meals.push(select.value);
     });
 
+    document.querySelectorAll('.drink').forEach(function(select) {
+        drinks.push(select.value);
+    });
+
     // Debugging step: Log the collected names and meals
     console.log('Names:', names);
     console.log('Meals:', meals);
+    console.log('Drinks:', drinks);
 
     // Prepare concatenated strings
     const namesString = names.join(', ');
     const mealsString = meals.join(', ');
+    const drinksString = drinks.join(', ');
 
     // Debugging step: Check the concatenated strings
     console.log('Names String:', namesString);
     console.log('Meals String:', mealsString);
+    console.log('Drinks String:', drinksString);
 
     // Define the data to be sent
     const data = {
@@ -139,7 +148,8 @@ document.getElementById('rsvp-form').addEventListener('submit', function(event) 
         user_id: '_dtFlnqczx-gN6g8l',  // This is your API key/public key from EmailJS
         template_params: {
             'names': namesString,
-            'meals': mealsString
+            'meals': mealsString,
+            'drinks': drinksString
         }
     };
 
