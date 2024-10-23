@@ -20,10 +20,14 @@ function addMemberRow() {
         </select>
         <label for="drink">Pitie:</label>
         <select class="drink" name="drink" required>
+            <option value="" disabled selected>Vyber z možností...</option>
             <option value="Vino-biele">Víno biele</option>
             <option value="Vino-cervene">Víno červené</option>
             <option value="ine">Iné</option>
         </select>
+
+        <!-- Hidden input for custom drink -->
+        <input type="text" class="custom-drink" name="custom_drink" placeholder="Napíšte iné pitie" style="display:none;">
 
         <button type="button" class="remove-row">X</button>
     `;
@@ -99,7 +103,25 @@ function triggerConfetti() {
     }());
 }
 
+// Function to handle drink selection and show/hide custom drink input
+document.addEventListener('change', function(event) {
+    if (event.target.classList.contains('drink')) {
+        const customDrinkInput = event.target.closest('.member-row').querySelector('.custom-drink');
+        
+        // Show the custom drink input if 'Iné' is selected
+        if (event.target.value === 'ine') {
+            customDrinkInput.style.display = 'inline';  // Show the input
+            customDrinkInput.required = true;           // Make it required
+        } else {
+            customDrinkInput.style.display = 'none';    // Hide the input
+            customDrinkInput.required = false;          // Remove required attribute
+            customDrinkInput.value = '';                // Clear the input value
+        }
+    }
+});
 
+
+// Handle form submission
 document.getElementById('rsvp-form').addEventListener('submit', function(event) {
     event.preventDefault();  // Prevent form submission from refreshing the page
 
@@ -107,11 +129,6 @@ document.getElementById('rsvp-form').addEventListener('submit', function(event) 
     const names = [];
     const meals = [];
     const drinks = [];
-
-    // Debugging step: Check if dynamic elements are being selected properly
-    console.log(document.querySelectorAll('.name').length, 'name fields found');
-    console.log(document.querySelectorAll('.meal').length, 'meal fields found');
-    console.log(document.querySelectorAll('.drink').length, 'drinl fields found');
 
     // Collect all names and meals
     document.querySelectorAll('.name').forEach(function(input) {
@@ -123,23 +140,21 @@ document.getElementById('rsvp-form').addEventListener('submit', function(event) 
     });
 
     document.querySelectorAll('.drink').forEach(function(select) {
-        drinks.push(select.value);
+        const memberRow = select.closest('.member-row');
+        const customDrinkInput = memberRow.querySelector('.custom-drink');
+        
+        // If 'Iné' is selected, get the custom drink value
+        if (select.value === 'ine' && customDrinkInput.value.trim() !== '') {
+            drinks.push(customDrinkInput.value.trim());  // Push custom drink
+        } else {
+            drinks.push(select.value);  // Push selected value
+        }
     });
-
-    // Debugging step: Log the collected names and meals
-    console.log('Names:', names);
-    console.log('Meals:', meals);
-    console.log('Drinks:', drinks);
 
     // Prepare concatenated strings
     const namesString = names.join(', ');
     const mealsString = meals.join(', ');
     const drinksString = drinks.join(', ');
-
-    // Debugging step: Check the concatenated strings
-    console.log('Names String:', namesString);
-    console.log('Meals String:', mealsString);
-    console.log('Drinks String:', drinksString);
 
     // Define the data to be sent
     const data = {
